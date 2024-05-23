@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Frequency_When_Recurring</fullName>
+    <active>true</active>
+    <description>Ensures Frequency is filled when Recurring? is checked</description>
+    <errorConditionFormula>Recurring__c = TRUE &amp;&amp; ( NOT( ISPICKVAL( Frequency__c , &quot;Daily&quot;) )|| NOT( ISPICKVAL( Frequency__c , &quot;Weekly&quot;) ))</errorConditionFormula>
+    <errorDisplayField>Frequency__c</errorDisplayField>
+    <errorMessage>Please fill in the Frequency field when the event is recurring</errorMessage>
+</ValidationRule>

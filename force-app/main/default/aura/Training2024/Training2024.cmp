@@ -1,0 +1,27 @@
+<aura:component controller="insertStudentUsingAura" implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" >
+	<aura:attribute name="firstname" type="string" default=""/>
+    <lightning:input type="text" label="First Name" placeholder="Enter your first name : " aura:id="firstname1" value="{!v.firstname}"/>
+    
+    <aura:attribute name="lastname" type="string" description="Last Name"/>
+    <lightning:input type="text" label="Last Name" placeholder="Enter your last name : " aura:id="lastname1" value="{!v.lastname}"/>
+    
+    <aura:attribute name="dateofbirth" type="date"/>
+    <lightning:input type="date" label="Date of Birth" placeholder="Enter your date of birth : " aura:id="dateofbirth1" value="{!v.dateofbirth}" formatter="MM/DD/YYYY"/>
+    
+    <aura:attribute name="age" type="integer"/>
+    <lightning:input type="number" label="Age : " placeholder="Enter your Age : " aura:id="age1" value="{!v.age}"/>
+    
+    <aura:attribute name="gender" type="string"/>
+    <lightning:select label="Select your Gender: " value="{!v.gender}" aura:id="gender1">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    </lightning:select>
+    
+    <aura:attribute name="mobileNumber" type="string"/>
+    <lightning:input type="tel" label="Mobile Number" placeholder="Enter your Mobile Number : " aura:id="mobileNumber1" value="{!v.mobileNumber}"/>
+   
+    <aura:attribute name="graduated" type="boolean" default="false"/>
+    <lightning:input type="checkbox" label="Graduated" placeholder="Graduated : " aura:id="graduated1" checked="{!v.graduated}"/>
+    
+    <lightning:button label="Submit" onclick="{!c.getInput}" class="slds-m-top_medium"/> 
+</aura:component>
